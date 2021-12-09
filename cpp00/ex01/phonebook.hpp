@@ -9,10 +9,14 @@ class Phonebook{
 		Phonebook();
 		void search();
 		void add();
+
+		void print_all();
+
+		Contact contact[NUM_CONTACTS];
 	private:
 		void	addContact();
 
-		Contact contact[NUM_CONTACTS];
+		int		flag_write;
 };
 
 #endif

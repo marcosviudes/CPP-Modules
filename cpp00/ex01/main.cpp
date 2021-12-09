@@ -6,5 +6,7 @@ int main(void)
 	
 	phonebook.search();
 	phonebook.add();
+	//phonebook.contact[1].createContact();
+	phonebook.print_all();
 	return(0);
 }
