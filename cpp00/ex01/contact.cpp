@@ -1,15 +1,26 @@
 #include "./Contact.hpp"
 
 void Contact::createContact(){
-	std::cout << "Add new contact:\n";
-	std::cout << "Name: "; std::cin >> first_name;
-	std::cout << "Last Name: "; std::cin >> last_name;
-	std::cout << "nickname: "; std::cin >> nickname;
+	std::cout << "***************\n" 
+				"Add new contact\n"
+				"***************" << std::endl;
+	std::cout << "Name: "; std::getline(std::cin, this->first_name);
+	std::cout << "Last Name: "; std::getline(std::cin, this->last_name);
+	std::cout << "nickname: "; std::getline(std::cin, this->nickname);
 }
 
-void Contact::printContact(){
-	std::cout << "Name: " << first_name << " Lastname: " << last_name << " nickname: " << nickname << std::endl;
+void Contact::printContactHeader(){
+	//std::cout << "Name: " << first_name << " Lastname: " << last_name << " nickname: " << nickname << std::endl;
+	std::cout << 	"|          |          |          |\n";
 }
+
+void Contact::printContactExtend(int index){
+	std::cout << "\n|**********|**********|**********|**********|**********|**********|\n"
+	  "|   Index  |   Name   | Lastname |   Nick   |   Phone  |  Secret  |\n"
+	  "|**********|**********|**********|**********|**********|**********|" << std::endl;
+	std::cout << "|" << std::setw(10) << index << "|" <<  this->getName();
+}
+
 
 Contact::Contact(){
 	return;
