@@ -1,4 +1,4 @@
-NAME		=	phonebook
+NAME		=	telefunken
 
 SRC			=	main.cpp\
 				phonebook.cpp\
@@ -6,7 +6,7 @@ SRC			=	main.cpp\
 
 OBJS		=	$(SRC:.cpp=.o)
 
-CXX			= c++
+CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror
 
 
