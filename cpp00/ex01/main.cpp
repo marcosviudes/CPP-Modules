@@ -6,7 +6,6 @@ int main(void)
 	std::string input;
 	
 	for(;;){
-		//std::cout << "Introduce an action\n";
 		phonebook.showInstruction();
 		std::getline(std::cin, input);
 		if (input == "EXIT")
@@ -14,10 +13,9 @@ int main(void)
 		else if (input == "ADD")
 			phonebook.add();
 		else if (input == "SEARCH")
-		//	std::cout << "esto hace search\n";
 			phonebook.search();
 		else
-			std::cout << "invalid input" << std::endl;
+			phonebook.invalidInput();
 		std::cout << std::endl;
 	}
 	return(0);

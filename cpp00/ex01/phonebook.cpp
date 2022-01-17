@@ -7,10 +7,10 @@ Phonebook::Phonebook(){
 void Phonebook::showInstruction(){
 	std::cout << 
 		"\n********************\n"
-		"Introduce an action\n"
+		"Enter an action\n"
 		"  ADD\n"
 		"  SEARCH\n"
-		"  tEXIT\n"
+		"  EXIT\n"
 		"********************\n\n";
 }
 
@@ -27,13 +27,17 @@ void Phonebook::search(){
 }
 
 void Phonebook::add(){
-	std::cout<< std::endl;
+	std::cout << std::endl;
 	this->contact[0].createContact();
 	saved_contact++;
 }
 
-void Phonebook::print_all(){
+void Phonebook::printAll(){
 	for(int i = 0; i < NUM_CONTACTS; i++){
 		contact[i].printContactHeader();
 	}
+}
+
+void Phonebook::invalidInput(){
+	std::cout << "invalid input" << std::endl;
 }

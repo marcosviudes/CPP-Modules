@@ -15,10 +15,11 @@ class Contact{
 		std::string getLastName();
 		std::string getNickname();
 	private:
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		bool		write_enable;
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		bool		_write_enable;
+		bool		_is_empty;
 };
 
 #endif
