@@ -1,9 +1,10 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = Horde
 
 SRC		= main.cpp \
 			newZombie.cpp \
 			randomChump.cpp \
-			Zombie.cpp
+			Zombie.cpp \
+			ZombieHorde.cpp
 
 OBJS	= $(SRC:.cpp=.o)
 

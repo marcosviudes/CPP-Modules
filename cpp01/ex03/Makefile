@@ -1,14 +1,14 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = Violenceee!
 
-SRC		= main.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
-			Zombie.cpp
+SRC		=	main.cpp\
+			HumanA.cpp \
+			HumanB.cpp \
+			Weapon.cpp 
 
 OBJS	= $(SRC:.cpp=.o)
 
 CXX				= clang++
-CXXFLAGS		= -Wall -Wextra -Werror
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 
 all: $(NAME)

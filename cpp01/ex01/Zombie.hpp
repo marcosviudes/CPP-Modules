@@ -8,12 +8,13 @@ class Zombie
 		Zombie(std::string);
 		Zombie(void);
 		~Zombie();
+
+		void setName(std::string name);
 	private:
 		std::string	_Name;
 };
 
 void randomChump(std::string name);
 Zombie* newZombie(std::string name);
-Zombie* zombieHorde(int N, std::string name);
 
 
