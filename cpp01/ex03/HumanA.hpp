@@ -5,16 +5,16 @@
 class HumanA
 {
 	private:
-		std::string _Name;
+		std::string	name_;
+		Weapon		&weaponType;
 
 	public:
-		HumanA(std::string name, std::string type);
-		HumanA(/* args */);
+		HumanA(std::string name, Weapon &WeaponType);
+		/*HumanA();*/
 		~HumanA();
 
-		Weapon weaponType;
 		void	attack();
 		
 		void	setName(std::string name);
-		void	setWeapon(Weapon NewWeapon);
+		void	setWeapon(Weapon &newWeapon);
 };

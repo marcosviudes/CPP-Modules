@@ -2,7 +2,7 @@
 
 void Zombie::setName(std::string name)
 {
-	this->_Name = name;
+	this->name_ = name;
 }
 
 Zombie* zombieHorde( int N, std::string name )

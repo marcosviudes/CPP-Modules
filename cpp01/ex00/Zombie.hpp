@@ -9,7 +9,7 @@ class Zombie
 		Zombie(void);
 		~Zombie();
 	private:
-		std::string	_Name;
+		std::string	name_;
 };
 
 void randomChump(std::string name);

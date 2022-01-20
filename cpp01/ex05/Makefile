@@ -1,9 +1,7 @@
 NAME = Violenceee!
 
 SRC		=	main.cpp\
-			HumanA.cpp \
-			HumanB.cpp \
-			Weapon.cpp 
+			Karen.cpp
 
 OBJS	= $(SRC:.cpp=.o)
 
