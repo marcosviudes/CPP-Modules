@@ -4,21 +4,21 @@
 # include <iomanip>
 # include "contact.hpp"
 # define NUM_CONTACTS	8
-# define MAX_WIDTH		10
 
 class Phonebook{
 	public:
 		Phonebook();
+		void	welcome();
 		void	showInstruction();
 		void	search();
 		void	add();
 		void	printAll();
 		void	invalidInput();
 
-		Contact contact[NUM_CONTACTS];
 	private:
+		Contact contact[NUM_CONTACTS];
 		void	addContact();
-		int		saved_contact;
+		int		_savedContact;
 };
 
 #endif

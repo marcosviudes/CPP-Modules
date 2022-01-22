@@ -4,22 +4,28 @@
 # include <iomanip>
 # include <string>
 
+# define MAX_WIDTH		10
+# define WIDTH			30
+
 class Contact{
 	public:
 		Contact();
 		void printContactHeader();
-		void printContactExtend(int index);
+		void printContactExtend();
 		void createContact();
 
 		std::string getName();
 		std::string getLastName();
 		std::string getNickname();
+		bool		getIsEmpty();
+	
 	private:
 		std::string	_first_name;
 		std::string	_last_name;
 		std::string	_nickname;
-		bool		_write_enable;
+		std::string	_phone;
+		std::string	_secret;
 		bool		_is_empty;
 };
-
+void truncateField(const std::string classField);
 #endif

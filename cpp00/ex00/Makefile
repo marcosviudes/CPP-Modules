@@ -1,12 +1,12 @@
-NAME	= megaphone
+NAME		= megaphone
 
-SRC		= megaphone.cpp
-OBJS	= $(SRC:.cpp=.o)
+SRC			= megaphone.cpp
+OBJS		= $(SRC:.cpp=.o)
 
-CXX		= clang++
-CXXFLAGS	= -Wall -Wextra -Werror
+CXX			= clang++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-ARG = "shhhhh... I think the students are asleep..."
+ARG			= "shhhhh... I think the students are asleep..."
 
 all: $(NAME)
 

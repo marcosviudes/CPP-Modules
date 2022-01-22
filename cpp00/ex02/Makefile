@@ -6,7 +6,7 @@ SRC			=	Account.cpp\
 OBJS		=	$(SRC:.cpp=.o)
 
 CXX			= clang++
-CXXFLAGS	= -Wall -Wextra -Werror
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 
 #ARG = ""

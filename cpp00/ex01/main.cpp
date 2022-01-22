@@ -5,9 +5,9 @@ int main(void)
 	Phonebook	phonebook;
 	std::string input;
 	
-	for(;;){
-		phonebook.showInstruction();
-		std::getline(std::cin, input);
+	phonebook.welcome();
+	phonebook.showInstruction();
+	for(;std::getline(std::cin, input);){
 		if (input == "EXIT")
 			exit (0);
 		else if (input == "ADD")
@@ -17,6 +17,7 @@ int main(void)
 		else
 			phonebook.invalidInput();
 		std::cout << std::endl;
+		phonebook.showInstruction();
 	}
 	return(0);
 }
