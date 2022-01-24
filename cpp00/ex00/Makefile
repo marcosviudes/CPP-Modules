@@ -3,7 +3,7 @@ NAME		= megaphone
 SRC			= megaphone.cpp
 OBJS		= $(SRC:.cpp=.o)
 
-CXX			= clang++
+CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 ARG			= "shhhhh... I think the students are asleep..."

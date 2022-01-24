@@ -17,7 +17,7 @@ void Phonebook::welcome(){
 		"\n   `--'   `----'`--'`----'`--'   `----' `--''--'`--'`--'`----'`--''--'.--.     "
 		"\n                                                                      '--'     "
 		"\n_______________________________________________________________________________"
-<< std::endl;
+	<< std::endl;
 }
 
 void Phonebook::showInstruction(){
@@ -33,7 +33,7 @@ void Phonebook::showInstruction(){
 void Phonebook::search(){
 	std::string buffin;
 
-	std::cout << 
+	std::cout <<
 	 "\n|**********|**********|**********|**********|"
 	 "\n|   Index  |First Name| Lastname |   Nick   |"
 	 "\n|**********|**********|**********|**********|" << std::endl;
@@ -45,7 +45,8 @@ void Phonebook::search(){
 			std::cout << "|----------|----------|----------|----------|\n";
 		}
 	}
-	std::cout << std::endl;
+
+	std::cout << "\nenter an index to stalk: ";
 	std::getline(std::cin, buffin);
 	if(buffin.length() == 1 && (buffin[0] >= '0' && buffin[0] <= '7'))
 		if(contact[std::stoi(buffin)].getIsEmpty() == 0)

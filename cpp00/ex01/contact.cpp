@@ -6,10 +6,10 @@ Contact::Contact(){
 }
 
 void Contact::createContact(){
-	std::cout << "***************\n" 
+	std::cout << "***************\n"
 				 "Add new contact\n"
 				 "***************"	<< std::endl;
-	std::cout << "  First Name: ";		std::getline(std::cin, this->_first_name);
+	std::cout << "  First Name: ";	std::getline(std::cin, this->_first_name);
 	std::cout << "  Last Name: ";	std::getline(std::cin, this->_last_name);
 	std::cout << "  Nickname: ";	std::getline(std::cin, this->_nickname);
 	std::cout << "  Phone: ";		std::getline(std::cin, this->_phone);

@@ -10,15 +10,15 @@
 class Contact{
 	public:
 		Contact();
-		void printContactHeader();
-		void printContactExtend();
-		void createContact();
 
 		std::string getName();
 		std::string getLastName();
 		std::string getNickname();
 		bool		getIsEmpty();
 	
+		void printContactHeader();
+		void printContactExtend();
+		void createContact();
 	private:
 		std::string	_first_name;
 		std::string	_last_name;
