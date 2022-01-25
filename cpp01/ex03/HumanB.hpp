@@ -14,5 +14,5 @@ class HumanB
 		~HumanB();
 
 		void	attack();
-		void	setWeapon(Weapon *newWeapon);
+		void	setWeapon(Weapon &newWeapon);
 };

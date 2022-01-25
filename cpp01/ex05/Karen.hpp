@@ -1,3 +1,6 @@
+#include <string>
+#include <iostream>
+
 class Karen
 {
 	private:
@@ -9,4 +12,6 @@ class Karen
 	public:
 		Karen(/* args */);
 		~Karen();
+
+		void complain(std::string level );
 };

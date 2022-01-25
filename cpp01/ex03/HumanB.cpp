@@ -9,11 +9,11 @@ HumanB::~HumanB()
 {
 }
 
-void HumanB::setWeapon(Weapon *newWeapon)
+void HumanB::setWeapon(Weapon &newWeapon)
 {
-	weaponType = newWeapon;
+	weaponType = &newWeapon;
 }
 
 void HumanB::attack(void){
-	std::cout << _name << " attacks with his" << this->weaponType->getType() << std::endl;
+	std::cout << _name << " attacks with his " << this->weaponType->getType() << std::endl;
 }
