@@ -1,6 +1,6 @@
 NAME = replace
 
-SRC		= main.cpp
+SRC		= main.cpp Replace.cpp
 
 OBJS	= $(SRC:.cpp=.o)
 
