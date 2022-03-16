@@ -5,7 +5,7 @@
 class Fixed{
 	public:
 		Fixed(void);
-//		Fixed(void);
+		Fixed(const Fixed & copy);
 		~Fixed();
 
 		int getRawBits( void ) const;
@@ -13,5 +13,5 @@ class Fixed{
 	
 	private:
 		int                 _fixedPoint;
-		static int const    _fracBit;
+		static int const    _fracBit = 8;
 };
