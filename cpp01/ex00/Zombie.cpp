@@ -2,7 +2,7 @@
 
 Zombie::Zombie(std::string name)
 {
-		name_ = name;
+	name_ = name;
 }
 
 Zombie::~Zombie()

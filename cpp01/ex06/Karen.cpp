@@ -32,19 +32,33 @@ void Karen::error( void ){
 
 void Karen::complain(std::string level){
 	std::string def_levels[NUM_LEVELS] = {"DEBUG", "INFO", "WARNING", "ERROR"}; 
+	int		number;
 
-	void (Karen::*f[NUM_LEVELS])(void) = {
-		&Karen::debug,
-		&Karen::info,
-		&Karen::warning,
-		&Karen::error
-	};
+	number = 4;
 	for(int i = 0; i < NUM_LEVELS; i++)
 		if(level == def_levels[i])
-			(this->*f[i])();
+			number = i;
+	
+	switch (number)
+	{
+		case 0:
+			this->debug();
+			break;
+		case 1:
+			this->info();
+			break;
+		case 2:
+			this->warning();
+			break;
+		case 3:
+			this->error();
+			break;
+		default:
+			break;
+	}
 	return;
 }
-
+	
 Karen::~Karen()
 {
 }
