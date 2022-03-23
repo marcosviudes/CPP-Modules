@@ -13,6 +13,12 @@ Fixed::Fixed(const Fixed &src)
 	*this = src;
 }
 
+Fixed::Fixed(const int i)
+{
+	this->_fixedPoint = i;
+	this->_fracBit = 8;
+}
+
 Fixed& Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Assignation operator called" << std::endl; 

@@ -8,6 +8,7 @@ class Fixed{
 		Fixed(const Fixed & copy);
 		~Fixed();
 
+		Fixed & operator=(Fixed const & rhs);
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 	
