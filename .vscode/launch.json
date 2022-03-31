@@ -5,6 +5,18 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "ex04",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/cpp01/ex04/replace",
+			"args": ["/Users/mviudes/42_cursus/cpp-modules/cpp01/ex04/TestFile", "o", "a"],
+			"stopAtEntry": true,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "lldb"
+		},
+		{
 			"name": "(lldb) Iniciar",
 			"type": "cppdbg",
 			"request": "launch",
