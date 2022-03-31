@@ -44,6 +44,8 @@ int main(int argc, char **argv)
 		}
 		if(((std::string)argv[1]).empty() || ((std::string)argv[2]).empty())
 		{
+			output.close();
+			input.close();
 			std::cout << "Error: empty args are not valid" << std::endl;
 			return(-2);
 		}
