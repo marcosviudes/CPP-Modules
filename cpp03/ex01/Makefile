@@ -8,6 +8,8 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 #ARG			= "shhhhh... I think the students are asleep..."
 
+.PHONY: all clean fclean re run
+
 all: $(NAME)
 
 $(NAME): $(OBJS) ClapTrap.hpp ScavTrap.hpp
