@@ -13,6 +13,8 @@ CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 debug: CXXFLAGS += -DDEBUG -g
 debug: clean all
 
+.PHONY: all clean fclean re run debug
+
 all: $(NAME)
 
 $(NAME): $(OBJS)

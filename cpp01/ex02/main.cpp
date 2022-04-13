@@ -14,5 +14,3 @@ int main(void)
 	std::cout << "stringREF :	" << &stringREF << " contains:	" << stringREF << std::endl;
 	return (0);
 }
-
-//Es un "alias" para un objeto
