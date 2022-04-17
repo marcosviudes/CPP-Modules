@@ -13,6 +13,6 @@ class Fixed{
 		void setRawBits( int const raw );
 	
 	private:
-		int                 _fixedPoint;
-		static int const    _fracBit = 8;
+		int					_fixedPoint;
+		static int const	_fracBit = 8;
 };

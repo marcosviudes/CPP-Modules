@@ -16,14 +16,28 @@ Fixed::Fixed(const Fixed &src)
 Fixed::Fixed(const int i)
 {
 	this->_fixedPoint = i;
-	this->_fracBit = 8;
 }
 
+Fixed::Fixed(const float f)
+{
+	this->_fixedPoint = i;
+}
+
+float Fixed::toFloat(void) const
+{
+	return((float)_fixedPoint); //esto está mal;
+}
 Fixed& Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Assignation operator called" << std::endl; 
 	this->_fixedPoint = rhs.getRawBits();
 	return (*this);
+}
+
+std::ostream&	operator<<(std::ostream &o, Fixed const & rhs)
+{
+	o << rhs.toFloat();
+	return (o);
 }
 
 int Fixed::getRawBits(void) const
