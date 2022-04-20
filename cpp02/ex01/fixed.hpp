@@ -10,9 +10,8 @@ class Fixed{
 		Fixed(const Fixed & copy);
 		~Fixed();
 
-		Fixed& 		operator=(Fixed const & rhs);
+		Fixed&		operator=(Fixed const & rhs);
 		int			getRawBits( void ) const;
-		int			getFixedPoint(void) const;
 		void		setRawBits( int const raw );
 		float		toFloat( void ) const;
 		int			toInt( void ) const;

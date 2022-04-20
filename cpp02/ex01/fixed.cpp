@@ -1,5 +1,6 @@
 #include "fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed(void)
 {
@@ -9,24 +10,32 @@ Fixed::Fixed(void)
 
 Fixed::Fixed(const Fixed &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int i)
 {
-	this->_fixedPoint = i;
+	this->_fixedPoint = i << _fracBit;
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float f)
 {
-	this->_fixedPoint = i;
+	this->_fixedPoint = std::roundf(f * (1 << _fracBit));
+	std::cout << "Float constructor called" << std::endl;
 }
 
 float Fixed::toFloat(void) const
 {
-	return((float)_fixedPoint); //esto está mal;
+	return((float)this->_fixedPoint / (float)(1 << this->_fracBit));
 }
+
+int Fixed::toInt(void) const
+{
+	return (float)this->_fixedPoint / (float)(1 << this->_fracBit);
+}
+
 Fixed& Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Assignation operator called" << std::endl; 
@@ -42,7 +51,6 @@ std::ostream&	operator<<(std::ostream &o, Fixed const & rhs)
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return(_fixedPoint);
 }
 
