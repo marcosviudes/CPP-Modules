@@ -25,11 +25,11 @@ ClapTrap::ClapTrap(ClapTrap & src)
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
 {
-	std::cout << "ClapTrap Assign operator called" << std::endl;
 	this->_Name = rhs.getName();
 	this->_hitPoints = rhs.getHitPoints();
 	this->_energyPoints = rhs.getEnergyPoints();
 	this->_attackDamage = rhs.getAttackDamage();
+	std::cout << "ClapTrap Assign operator called" << std::endl;
 	return *this;
 }
 
@@ -84,5 +84,5 @@ int	ClapTrap::getAttackDamage(void) const
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << _Name << " deleted";
+	std::cout << "ClapTrap " << _Name << " deleted" << std::endl;
 }

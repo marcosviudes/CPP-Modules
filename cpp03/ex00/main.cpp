@@ -1,12 +1,12 @@
 #include "ClapTrap.hpp"
 
 int main(void){
-	ClapTrap hola("pene");
+	ClapTrap clap("clap");
 	std::string	target;
 
-	target = "Jimmy";
-	hola.attack(target);
-	hola.takeDamage(3);
-	hola.beRepaired(5);
+	target = "target";
+	clap.attack(target);
+	clap.takeDamage(3);
+	clap.beRepaired(5);
 	return(0);
 }

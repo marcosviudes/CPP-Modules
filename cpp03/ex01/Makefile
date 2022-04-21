@@ -3,7 +3,7 @@ NAME		= ScavTrap
 SRC			= ClapTrap.cpp main.cpp ScavTrap.cpp
 OBJS		= $(SRC:.cpp=.o)
 
-CXX			= c++
+CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 #ARG			= "shhhhh... I think the students are asleep..."

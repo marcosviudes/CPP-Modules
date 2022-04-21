@@ -102,5 +102,5 @@ void ClapTrap::setAttackDamage(int attackDamage)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << _Name << " deleted";
+	std::cout << "ClapTrap " << _Name << " deleted" << std::endl;
 }
