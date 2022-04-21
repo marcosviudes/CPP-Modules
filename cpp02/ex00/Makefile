@@ -5,7 +5,7 @@ SRC			= main.cpp \
 
 OBJS		= $(SRC:.cpp=.o)
 
-CXX			= c++
+CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 .PHONY: all clean fclean re run
