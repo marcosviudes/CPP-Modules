@@ -3,7 +3,7 @@
 #include "ClapTrap.hpp"
 #pragma once
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	private:
 	public:
@@ -13,6 +13,8 @@ class ScavTrap : public ClapTrap
 		~ScavTrap(void);
 
 		ScavTrap	&operator=(ScavTrap const &rhs);
-		void		attack(std::string const &target);
+		virtual void		attack(std::string const &target);
+		//void		takeDamage(unsigned int amount);
+		//void		beRepaired(unsigned int amount);
 		void		guardGate(void);
 };

@@ -1,10 +1,10 @@
-NAME		= ScavTrap
+NAME		= Diamond
 
-SRC			= ClapTrap.cpp main.cpp ScavTrap.cpp
+SRC			= ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJS		= $(SRC:.cpp=.o)
 
 CXX			= clang++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow # -Wpedantic
 
 #ARG			= "shhhhh... I think the students are asleep..."
 
