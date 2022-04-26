@@ -1,6 +1,7 @@
-NAME		= farm
+NAME		= interface
 
-SRC			= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC			=	main.cpp Amateria.cpp iCharacter.cpp
+
 OBJS		= $(SRC:.cpp=.o)
 
 CXX			= clang++

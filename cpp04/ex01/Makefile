@@ -1,6 +1,11 @@
-NAME		= farm
+NAME		= brain
 
-SRC			= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC			=	main.cpp\
+				Animal.cpp\
+				Cat.cpp\
+				Dog.cpp\
+				Brain.cpp
+
 OBJS		= $(SRC:.cpp=.o)
 
 CXX			= clang++
