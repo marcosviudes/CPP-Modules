@@ -1,6 +1,11 @@
 #include <iostream>
-#include "ICharater.hpp"
 #include "AMateria.hpp"
+#include "Character.hpp"
+#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
+#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main()
 {
@@ -9,11 +14,10 @@ int main()
 	src->learnMateria(new Cure());
 
 	ICharacter* me = new Character("me");
-
+	
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	IMateriaSource* src = new MateriaSource();
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	
@@ -21,10 +25,8 @@ int main()
 	
 	me->use(0, *bob);
 	me->use(1, *bob);
-	
 	delete bob;
 	delete me;
 	delete src;
-	
 	return 0;
 }

@@ -1,6 +1,6 @@
 NAME		= interface
 
-SRC			=	main.cpp Amateria.cpp Character.cpp Cure.cpp Ice.cpp ICharacter.cpp MateriaSource.cpp
+SRC			=	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJS		= $(SRC:.cpp=.o)
 
