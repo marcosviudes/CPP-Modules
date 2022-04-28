@@ -3,7 +3,8 @@
 #include <iostream>
 #include "Form.hpp"
 
-Form::Form(std::string name, int gradeToSign,int gradeToExec) : _name(name), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
+
+Form::Form(std::string name, int gradeToSign,int gradeToExec) :_name(name), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
 	this->_isSigned = false;
 	if (_gradeToExec < 1 || _gradeToSign < 1)
@@ -27,6 +28,7 @@ Form::Form( Form const &copy) : _name(copy.getName()), _gradeToSign(copy.getGrad
 Form &Form::operator=( Form const &rhs)
 {
 	this->_isSigned = rhs.getSigned();
+	this->_target = rhs.getTarget();
 	std::cout << "Form Assignment operator called" << std::endl;
 	return *this;
 }
@@ -39,6 +41,15 @@ void	Form::beSigned(const Bureaucrat &signatory)
 	std::cout << signatory.getName() << " signs " << this->_name << std::endl;
 }
 
+void	Form::execute(Bureaucrat const &executor) const
+{
+	if(this->getSigned() == false)
+		throw NotSignedException();
+	if(this->getGradeToExec() > executor.getGrade())
+		throw GradeTooLowException();
+	std::cout << executor.getName() << " executes " << this->_name << std::endl;
+}
+
 const char *Form::GradeTooHighException::what() const throw()
 {
 	return "Grade is Too High to sign";
@@ -49,9 +60,19 @@ const char *Form::GradeTooLowException::what() const throw()
 	return "Grade is Too Low to sign";
 }
 
+const char *Form::NotSignedException::what() const throw()
+{
+	return "Form isn't signed";
+}
+
 std::string		Form::getName(void) const
 {
 	return(this->_name);
+}
+
+std::string		Form::getTarget(void) const
+{
+	return(this->_target);
 }
 
 bool		Form::getSigned(void) const

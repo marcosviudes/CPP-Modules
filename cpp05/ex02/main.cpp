@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
@@ -76,7 +77,7 @@ int main(void)
 	}
 	
 	std::cout << std::endl;
-	std::cout <<  "/ex01 TEST*************************" << std::endl;
+	/*std::cout <<  "/ex01 TEST*************************" << std::endl;
 	{
 		std::cout  << std::endl << "-----Test case: Form sign" << std::endl;
 		Bureaucrat	conrad("HermesConrad", 34);
@@ -90,6 +91,26 @@ int main(void)
 		std::cout << conrad << std::endl;
 		conrad.signForm(sevpay);
 		std::cout << std::endl;
+	}*/
+	std::cout <<  "/ex02 TEST*************************" << std::endl;
+	{
+		std::cout  << std::endl << "-----Test case: Execute form" << std::endl;
+		Bureaucrat				marvin("marvin", 34);
+		PresidentialPardonForm	pardon("mviudes blackhole's");
+		std::cout << std::endl;
+		std::cout << marvin << std::endl;
+		std::cout << pardon << std::endl;
+
+		marvin.signForm(pardon);
+		marvin.executeForm(pardon);
+		std::cout << pardon << std::endl;
+		std::cout << std::endl;
+		marvin.gradeIncrement(10);
+		std::cout << marvin << std::endl;
+		marvin.signForm(pardon);
+		marvin.executeForm(pardon);
+		std::cout << std::endl;
+
 	}
 	return (0);
 }
