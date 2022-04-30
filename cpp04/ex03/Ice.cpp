@@ -4,6 +4,7 @@
 
 Ice::Ice(void)
 {
+	this->_type = "ice";
 	std::cout << "Ice Default Constructor called" << std::endl;
 }
 
@@ -36,13 +37,7 @@ void Ice::use(ICharacter & target)
 {
 	std::cout << "* shoots an ice bolt at *" << target.getName() << std::endl;
 }
-/*
-std::ostream &operator<<( std::ostream & o, Ice const &i)
-{
-	o << std::endl;
-	return (o);
-}
-*/
+
 Ice::~Ice()
 {
 	std::cout << "Ice Destructor called" << std::endl;

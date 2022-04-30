@@ -8,7 +8,8 @@ class MateriaSource: public IMateriaSource
 {
 	private:
 		/*Private variables*/
-		AMateria*	_inventory[NUM_INVENTORY];
+		bool _iceKnowledge;
+		bool _cureKnoledge;
 	public:
 		MateriaSource(void);
 		//MateriaSource(/*args*/);

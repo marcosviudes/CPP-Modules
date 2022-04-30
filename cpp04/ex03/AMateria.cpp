@@ -31,16 +31,11 @@ void AMateria::use(ICharacter &target)
 	(void)target;
 	return;
 }
+
 std::string const & AMateria::getType() const
 {
 	return(this->_type);
 }
-
-/*
-AMateria *AMateria::clone()
-{
-	return(new)
-}*/
 
 AMateria::~AMateria()
 {

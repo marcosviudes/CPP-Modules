@@ -64,17 +64,10 @@ void Character::use(int idx, ICharacter& target)
 	this->_inventory[idx]->use(target);
 }
 
-
-/*
-std::ostream &operator<<( std::ostream & o, Character const &i)
-{
-	o << std::endl;
-	return (o);
-}
-*/
 Character::~Character()
 {
 	for(int i = 0; i < NUM_INVENTORY; i++)
-		delete this->_inventory[i];
+		if(this->_inventory[i])
+			delete this->_inventory[i];
 	std::cout << "Character Destructor called" << std::endl;
 }
