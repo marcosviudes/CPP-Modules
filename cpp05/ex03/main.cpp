@@ -4,6 +4,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.cpp"
+#include "Intern.hpp"
 
 int main(void)
 {
@@ -151,6 +152,35 @@ int main(void)
 		marvin.signForm(shrubbery);
 		marvin.executeForm(shrubbery);
 		std::cout << std::endl;
+	}
+	std::cout <<  "/ex03 TEST*************************" << std::endl;
+	{
+		Intern someRandomIntern;
+		Form* rrf;
+		Form* rrf1;
+		Form* rrf2;
+		Form* fake;
+		Bureaucrat marvin("marvin", 1);
+		std::cout << std::endl;
+
+			rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+			rrf1 = someRandomIntern.makeForm("robotomy request", "Bender");
+			rrf2 = someRandomIntern.makeForm("presidential pardon", "Bender");
+		try
+		{
+			fake = someRandomIntern.makeForm("fake", "Bender");
+		}catch (std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+		std::cout << std::endl;
+
+		marvin.signForm(*rrf1);
+		marvin.executeForm(*rrf1);
+		std::cout << std::endl;
+		delete rrf;
+		delete rrf1;
+		delete rrf2;
+
 	}
 	return (0);
 }
