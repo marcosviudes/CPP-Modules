@@ -4,20 +4,42 @@ template <typename T>
 class Array
 {
 	private:
-		T	array[];
-
+		int		_n;
+		T	*_array;
 	public:
-		Array(void);
-		Array(unsigned int n);
-		Array( Array const &copy);
-		~Array();
+		Array(void){this->_array = NULL; _n = 0;};
+		Array(unsigned int n){
+			_array = new T [n];
+			_n = n;
+			};
+		Array( Array const &copy){ *this = copy; };
+		~Array(){delete[] _array;}//_array = NULL;};
 
-		Array &operator=( Array const &rhs);
-		
+		Array &operator=( Array const &rhs){
+			for(int i = 0; i < this->_n; i++)
+			{
+				this->_array[i] = T(rhs._array[i]);
+			}
+			return *this;
+		}
+
+		T &operator[](int i){
+			if( i < 0 || i >= this->_n)
+					throw Array::incaccesibleArray();
+			return(this->_array[i]);
+		}
+		int size(void){return(this->_n);}
+
+		class incaccesibleArray : public std::exception
+		{
+			const char *what() const throw (){
+				return "Inaccesible array"; 
+			}
+		};
 };
-std::ostream &operator<<( std::ostream &o, Array const &i);
+//std::ostream &operator<<( std::ostream &o, Array const &i);
 
-
+/*
 #include "Array.hpp"
 #include <string>
 #include <iostream>
@@ -27,7 +49,7 @@ Array::Array(void)
 	std::cout << "Array Default Constructor called" << std::endl;
 }
 
-Array::Array(/*args*/)
+Array::Array()
 {
 	std::cout << "Array Constructor called" << std::endl;
 }
@@ -53,4 +75,4 @@ std::ostream &operator<<( std::ostream & o, Array const &i)
 Array::~Array()
 {
 	std::cout << "Array Destructor called" << std::endl;
-}
+}*/
