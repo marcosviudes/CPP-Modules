@@ -5,6 +5,7 @@
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
+    Array<int> numbers2(0);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
@@ -13,6 +14,9 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
+    for (int i = 0; i < 5; i++)
+        std::cout << mirror[i] << " ";
+    std::cout << std::endl;
     //SCOPE
     {
         Array<int> tmp = numbers;
@@ -27,6 +31,8 @@ int main(int, char**)
             return 1;
         }
     }
+    std::cout << "Mirror and numbers have the same values" << std::endl;
+    std::cout << "try to access -2 arr position:" << std::endl;
     try
     {
         numbers[-2] = 0;
@@ -43,47 +49,17 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
-
+    for (int i = 0; i < 5; i++)
+        std::cout << numbers[i] << " ";
+    std::cout << std::endl << "setting new values:" << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
     }
+    for (int i = 0; i < 5; i++)
+        std::cout << numbers[i] << " ";
+    std::cout << std::endl;
     delete [] mirror;//
     //system("leaks Array");
     return 0;
 }
-
-/*
-#include <iostream>
-#include "Array.hpp"
-
-class Awesome{
-	public:
-		int a;
-		Awesome(void){ a = 1; };
-};
-
-std::ostream &operator<<( std::ostream & o, Awesome const &i)
-{
-    o << i.a << std::endl;
-    return (o);
-}
-
-void patata(void){
-	{	
-		Array<Awesome>* hola = new Array<Awesome>(0);
-		std::cout << (*hola)[1] << std::endl;
-		delete hola;
-		std::cout << "wtf" << std::endl;
-	}
-}
-
-int main(int argc, char const *argv[])
-{
-	(void)argc;
-	(void)argv;
-
-	patata();
-    system("leaks a.out");
-	return 0;
-}*/

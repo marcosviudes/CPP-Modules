@@ -4,19 +4,31 @@ template <typename T>
 class Array
 {
 	private:
-		int		_n;
+		unsigned int		_n;
 		T	*_array;
 	public:
-		Array(void){this->_array = NULL; _n = 0;};
+		Array(void):  _n(0), _array(new T[0]){}
 		Array(unsigned int n){
 			_array = new T [n];
 			_n = n;
 			};
-		Array( Array const &copy){ *this = copy; };
-		~Array(){delete[] _array;}//_array = NULL;};
+		Array( Array const &copy){ 
+			this->_n = copy._n;
+			this->_array = new T[copy._n];
+			for(unsigned int i = 0; i < this->_n; i++)
+			{
+				this->_array[i] = T(copy._array[i]);
+			}
+		};
+		~Array(){delete[] this->_array;}
 
 		Array &operator=( Array const &rhs){
-			for(int i = 0; i < this->_n; i++)
+			if(this == &rhs)
+				return *this;
+			this->_n = rhs._n;
+			delete this->_array;
+			this->_array = new T[rhs._n];
+			for(unsigned int i = 0; i < this->_n; i++)
 			{
 				this->_array[i] = T(rhs._array[i]);
 			}
@@ -24,11 +36,11 @@ class Array
 		}
 
 		T &operator[](int i){
-			if( i < 0 || i >= this->_n)
-					throw Array::incaccesibleArray();
+			if( i < 0 || i >= static_cast<int>(this->_n))
+				throw Array::incaccesibleArray();
 			return(this->_array[i]);
 		}
-		int size(void){return(this->_n);}
+		int size(void) const {return(this->_n) ;}
 
 		class incaccesibleArray : public std::exception
 		{
@@ -37,42 +49,3 @@ class Array
 			}
 		};
 };
-//std::ostream &operator<<( std::ostream &o, Array const &i);
-
-/*
-#include "Array.hpp"
-#include <string>
-#include <iostream>
-
-Array::Array(void)
-{
-	std::cout << "Array Default Constructor called" << std::endl;
-}
-
-Array::Array()
-{
-	std::cout << "Array Constructor called" << std::endl;
-}
-
-Array::Array( Array const &copy)
-{
-	std::cout << "Array Copy Constructor called" << std::endl;
-	*this = copy;
-}
-
-Array &Array::operator=( Array const &rhs)
-{
-	std::cout << "Array Assignment operator called" << std::endl;
-	return *this;
-}
-
-std::ostream &operator<<( std::ostream & o, Array const &i)
-{
-	o << std::endl;
-	return (o);
-}
-
-Array::~Array()
-{
-	std::cout << "Array Destructor called" << std::endl;
-}*/

@@ -1,30 +1,18 @@
 #include <iostream>
-#include "iter.hpp"
-/*
-int main(void)
-{
-	char 
-	return (0);
+
+template <typename T>
+void	print(T const &input) {
+	std::cout << input << std::endl;
 }
-*/
 
-class Awesome 
-{
-	public: 
-		Awesome( void ) : _n( 42 ) { return; } 
-		int get( void ) const { return this->_n; } 
-		private: 
-			int _n; 
-}; 
-std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; } 
-	
-template< typename T > 
-void print( T const & x ) { std::cout << x << std::endl; return; } 
+int main(void) {
+	int arri[] = {1, 2, 3, 4, 5, 6};
+	float arrf[] = {1.1, 2.2, 3.14, 0, 4, 4, 44};
+	std::string wtf[] = { "hola", "buenos", "dias"};
 
-int main() { 
-	int tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
-	Awesome tab2[5]; 
-	iter( tab, 5, print ); 
-	iter( tab2, 5, print ); 
-return 0;
+	::iter<int>(arri, 6, print);
+	std::cout << std::endl;
+	iter<float>(arrf, 7, print);
+	std::cout << std::endl;
+	iter<std::string>(wtf, 3, print);
 }
