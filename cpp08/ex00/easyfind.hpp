@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 
 class Fail : public std::exception{
 	const char* what() const throw(){
@@ -7,8 +8,12 @@ class Fail : public std::exception{
 };
 
 template <typename T>
-int easyfind(T param, int i)
+int easyfind(T cont, int i)
 {
-	(void)i;
-	throw fail;
+	// std::cout << "aqui entra" << std::endl;
+	if(std::find(cont.begin(), cont.end(), i) != cont.end()){
+		std::cout << i << " found " << std::endl;
+		return(1);
+	}
+	throw Fail();
 }
