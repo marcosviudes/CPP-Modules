@@ -1,6 +1,6 @@
 NAME		= EasyFind
 
-SRC			=	main.cpp
+SRC			=	main.cpp mutantstack.cpp
 
 OBJS		= $(SRC:.cpp=.o)
 

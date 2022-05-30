@@ -22,4 +22,8 @@ class Span
 		class NoleftSpace: public std::exception{
 			const char* what() const throw();
 		};
+		
+		class Noenoughtvalues: public std::exception{
+			const char* what() const throw();
+		};
 };

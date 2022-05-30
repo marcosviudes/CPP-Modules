@@ -46,7 +46,22 @@ void Span::addNumber(int num)
 
 int Span::shortestSpan(void) const
 {
-	return(0);
+	int num = INT32_MAX;
+	if(this->_count < 2)
+		throw Noenoughtvalues();
+
+	std::vector<int> temp = this->_span;
+	int toCompare = 0;
+	for (std::size_t i = 0; i < temp.size(); i++){
+		toCompare = temp[i];
+		for (std::size_t  j= 0; j < temp.size(); j++){
+			if(i != j && std::abs(toCompare - temp[j]) < num){
+				std::cout << toCompare << " " << temp[j] << std::endl;
+				num = std::abs(toCompare - temp[j]);
+			}
+		}
+	}
+	return(num);
 }
 
 int Span::longestSpan(void) const
@@ -60,6 +75,10 @@ int Span::longestSpan(void) const
 
 const char *Span::NoleftSpace::what() const throw() {
 	return ("imposible to add value");
+}
+
+const char *Span::Noenoughtvalues::what() const throw() {
+	return ("not enought values");
 }
 
 Span::~Span()
