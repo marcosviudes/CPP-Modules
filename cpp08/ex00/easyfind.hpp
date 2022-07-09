@@ -10,7 +10,6 @@ class Fail : public std::exception{
 template <typename T>
 int easyfind(T cont, int i)
 {
-	// std::cout << "aqui entra" << std::endl;
 	if(std::find(cont.begin(), cont.end(), i) != cont.end()){
 		std::cout << i << " found " << std::endl;
 		return(1);

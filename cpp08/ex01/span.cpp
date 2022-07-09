@@ -57,23 +57,13 @@ int Span::shortestSpan(void) const
 		toCompare = temp[i];
 		for (std::size_t  j= 0; j < temp.size(); j++){
 			if(i != j && std::abs(toCompare - temp[j]) < num){
-				std::cout << toCompare << " " << temp[j] << std::endl;
+//				std::cout << toCompare << " " << temp[j] << std::endl;
 				num = std::abs(toCompare - temp[j]);
 			}
 		}
 	}
 	return(num);
 }
-/*
-int Span::shortestSpan(void) const
-{
-	std::vector<int> temp = this->_span;
-
-	std::sort(temp.begin(), temp.end());
-	std::transform(temp.begin(), temp.rbegin(), temp.size(), );
-}
-*/
-
 
 int Span::longestSpan(void) const
 {
