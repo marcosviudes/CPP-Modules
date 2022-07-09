@@ -2,24 +2,16 @@
 #include <string>
 #include <iostream>
 
-Mutantstack::Mutantstack(void)
-{
-	std::cout << "Mutantstack Default Constructor called" << std::endl;
+/*
+template <typename T>
+MutantStack<T>::MutantStack(void) : std::stack<T>(){
+	std::cout << "MutantStack Default Constructor called" << std::endl;
+	return;
 }
 
-Mutantstack::Mutantstack( Mutantstack const &copy)
+template <typename T>
+MutantStack<T>::MutantStack( MutantStack const &copy)
 {
-	std::cout << "Mutantstack Copy Constructor called" << std::endl;
+	std::cout << "MutantStack Copy Constructor called" << std::endl;
 	*this = copy;
-}
-
-Mutantstack &Mutantstack::operator=( Mutantstack const &rhs)
-{
-	std::cout << "Mutantstack Assignment operator called" << std::endl;
-	return *this;
-}
-
-Mutantstack::~Mutantstack()
-{
-	std::cout << "Mutantstack Destructor called" << std::endl;
-}	
+}*/

@@ -5,7 +5,7 @@ SRC			=	main.cpp span.cpp
 OBJS		= $(SRC:.cpp=.o)
 
 CXX			= clang++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I.
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 #ARG			= ""
 

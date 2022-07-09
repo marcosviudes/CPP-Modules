@@ -1,6 +1,7 @@
 #include "span.hpp"
 #include <string>
 #include <iostream>
+#include <algorithm>
 
 Span::Span(void)
 {
@@ -63,6 +64,16 @@ int Span::shortestSpan(void) const
 	}
 	return(num);
 }
+/*
+int Span::shortestSpan(void) const
+{
+	std::vector<int> temp = this->_span;
+
+	std::sort(temp.begin(), temp.end());
+	std::transform(temp.begin(), temp.rbegin(), temp.size(), );
+}
+*/
+
 
 int Span::longestSpan(void) const
 {

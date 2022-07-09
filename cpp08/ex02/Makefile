@@ -1,4 +1,4 @@
-NAME		= EasyFind
+NAME		= MutantStack
 
 SRC			=	main.cpp mutantstack.cpp
 
