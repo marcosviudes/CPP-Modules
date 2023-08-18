@@ -15,12 +15,19 @@ int	open_check_file(std::ifstream &fd, std::string filename)
 	return(0);
 }
 
+void ft_leaks(void){
+#ifdef DEBUG
+system("leaks btc");
+#endif
+}
+
 int main(int argc, char **argv)
 {
 	std::ifstream	input;
 	std::ifstream	database;
 	std::string		input_filename;
 
+	atexit(ft_leaks);
 	if(argc == 2)
 	{
 		if(open_check_file(input, (std::string)argv[1]) == 1)
