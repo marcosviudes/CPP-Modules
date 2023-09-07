@@ -1,8 +1,0 @@
-
-ex00: Bitcoin exchange
-	comprobar los numeros: caso | 1 a
-	
-ex01: RPN
-	hacer pruebas con mas numeros
-ex02: PmergeMe
-	Generar el vector 
