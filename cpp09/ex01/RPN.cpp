@@ -14,42 +14,42 @@ RPN::RPN(std::string input)
 		char c = input[i];
 		if (c == '-' && input[i + 1] >= '0' && input[i + 1] <= '9'){
 			num = ctoint(input[i + 1]) * -1;
-			this->pila.push(num);
+			this->_pila.push(num);
+			i++;
 		}
-		else if (c >= '0' && c <= '9') {
+		else if (c >= '0' && c <= '9'){
 			num = ctoint(c);
 			if(input[i + 1] != ' ' || ( i + 1 ) == input.size())
 				throw "invalid input";
-			this->pila.push(num);
+			this->_pila.push(num);
 		}
-		else if (c == '+' ||c == '-' ||c == '*' ||c == '/' ){
-			if(this->pila.empty()) a = this->getNum();
-			if(this->pila.empty()) b = this->getNum();
-			switch(c){
-				case '+': res = a + b; break;
-				case '-': res = a - b; break;
-				case '*': res = a * b; break;
-				case '/':{
-					if (a == 0){ throw "imposible to divide by zero"; }
-					else res = a / b; break;
+		else if (c == '+' ||c == '-' || c == '*' ||c == '/' ) {
+			if(!this->_pila.empty()) a = this->getNum();
+			if(!this->_pila.empty()){
+				b = this->getNum();
+				switch(c){
+					case '+': res = b + a; break;
+					case '-': res = b - a; break;
+					case '*': res = b * a; break;
+					case '/':{
+						if (a == 0){ throw "imposible to divide by zero"; }
+						else res = b / a; break;
+					}
+					default: throw "invalid operator";
 				}
-				default: throw "invalid operator";
-			}
-			this->pila.push(res);
+			} else { throw "Invalid input"; }
+			this->_pila.push(res);
 		}
-		else { throw "Invalid input"; }
+		else if(c != ' ')
+			throw "invalid input";
 	}
-	if(pila.size() == 1) std::cout <<  this->pila.top() << std::endl;
+	if(_pila.size() == 1) std::cout <<  this->_pila.top() << std::endl;
 	else throw "Error";
 }
 
-RPN::~RPN()
-{
-}
-
 int RPN::getNum(void) {
-	int ret = this->pila.top();
-	this->pila.pop();
+	int ret = this->_pila.top();
+	this->_pila.pop();
 	return(ret);
 }
 
@@ -57,4 +57,25 @@ int ctoint(char c)
 {
 	int ret = c - '0';
 	return ret;
+}
+
+RPN::RPN( RPN const &copy)
+{
+	std::cout << "RPN Copy Constructor called" << std::endl;
+	*this = copy;
+}
+
+RPN &RPN::operator=( RPN const &rhs)
+{
+	this->_pila = rhs.getPila();
+	return *this;
+}
+
+RPN::~RPN()
+{
+}
+
+std::stack<int> RPN::getPila(void) const
+{
+	return (this->_pila);
 }

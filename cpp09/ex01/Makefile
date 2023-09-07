@@ -23,3 +23,7 @@ re:
 
 run: $(NAME)
 	./$(NAME) $(ARG)
+
+debug: fclean
+debug: CXXFLAGS += -DDEBUG -g
+debug: $(NAME)
