@@ -22,10 +22,6 @@ int main(int argc, char **argv)
 		std::vector<std::pair <int, int> >  pares = fuc.merge(arr);
 
 
-//		for (size_t i = 0; i < pares.size(); i++) {
-//			std::cout << "("<< pares[i].first << ", " << pares[i].second << ") ";
-	//	} std::cout << std::endl;
-
 		std::vector<int> result = fuc.insertion(pares);
 		uint64_t elapsed_time = time_get_msec(start);
 
@@ -44,6 +40,8 @@ int main(int argc, char **argv)
 		std::cout << "Time to process a range of " << fuc.getDeque().size() <<" elements with std::deque : " << elapsed_time <<  "us"  << std::endl;
 	}catch(std::runtime_error &e){
 		std::cerr << "Error: " << e.what() << std::endl;
+	}catch(char const *err){
+		std::cerr << err << std::endl;
 	}
 }
 

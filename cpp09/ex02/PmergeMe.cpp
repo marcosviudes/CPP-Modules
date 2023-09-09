@@ -13,27 +13,16 @@ PmergeMe::PmergeMe(int argc, char **argv)
 {
 	if(argc < 1 || !argv[1])
 		throw(std::runtime_error(("Invalid args, use: ./program [num1] [num2]...")));
-	//char* token = std::strtok((argv[1]), " ");
-	//while(token != NULL)
 	int i = 1;
 	while(i < argc)
 	{
-		//std::cout << argv[i] << std::endl;
-		if(ft_isalnum(argv[i]) == false)
+		if(ft_isalnum(argv[i]) == false || argv[i] == '\0')
 			throw std::runtime_error(("Invalid args, use: ./program [num1] [num2]..."));
-		try {
-			int num = std::stoi(argv[i]);
-			if(num < 0)
-				throw "Not positive number";
+			long int num = std::atoi(argv[i]);
+			if(num < 0 || num > INT32_MAX)
+				throw "Invalid args, use: ./program [num1] [num2]...";
 			this->_input.push_back(num);
 			this->_input2.push_back(num);
-		}catch(std::invalid_argument &e){
-			std::cout << e.what() << std::endl;
-		}catch(std::out_of_range &e){
-			std::cout << e.what() << std::endl;
-		}catch (const std::exception& e) {
-			std::cout << e.what() << std::endl;
-		}
 		i++;
 	}
 }
@@ -89,14 +78,12 @@ std::deque<std::pair <int, int> > PmergeMe::merge(std::deque<int>& arr) {
 
 	for (size_t i = 0; i < size; i += 2) {
 		int first = _input2[i];
-		int second;
+		int second = -1;
 		if (i + 1 < size) {
 			second = _input2[i + 1];
 			if (second > first)
 				std::swap(first, second);
 		}
-		else
-			second = -1;
 		std::pair<int, int> newPair(first, second);
 		size_t insertPos = 0;
 		while (insertPos < pares.size() && first > pares[insertPos].first)
@@ -144,7 +131,7 @@ std::deque<int> PmergeMe::insertion(std::deque<std::pair<int, int> >& pares) {
 bool ft_isalnum(const char *str)
 {
 	char *ptr = (char*)str;
-	if(!str)
+	if(!str || *str == '\0')
 		return false;
 	while(*ptr != '\0'){
 		if(*ptr < '0' || *ptr > '9')
